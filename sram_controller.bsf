@@ -1,0 +1,99 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 64 64 280 224)
+	(text "sram_controller" (rect 5 0 107 15)(font "Arial" ))
+	(text "inst" (rect 8 141 31 156)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "eReadEn" (rect 0 0 61 15)(font "Arial" ))
+		(text "eReadEn" (rect 21 27 82 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "eAddr[17..0]" (rect 0 0 76 15)(font "Arial" ))
+		(text "eAddr[17..0]" (rect 21 51 97 66)(font "Arial" ))
+		(line (pt 0 56)(pt 16 56)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(input)
+		(text "mData[15..0]" (rect 0 0 82 15)(font "Arial" ))
+		(text "mData[15..0]" (rect 110 24 192 39)(font "Arial" ))
+		(line (pt 200 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(output)
+		(text "eData[15..0]" (rect 0 0 77 15)(font "Arial" ))
+		(text "eData[15..0]" (rect 24 80 101 95)(font "Arial" ))
+		(line (pt 16 88)(pt 0 88)(line_width 3))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "mAddr[17..0]" (rect 0 0 81 15)(font "Arial" ))
+		(text "mAddr[17..0]" (rect 114 43 195 58)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "ce" (rect 0 0 15 15)(font "Arial" ))
+		(text "ce" (rect 180 59 195 74)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 1))
+	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "ub" (rect 0 0 16 15)(font "Arial" ))
+		(text "ub" (rect 179 75 195 90)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 1))
+	)
+	(port
+		(pt 216 96)
+		(output)
+		(text "lb" (rect 0 0 11 15)(font "Arial" ))
+		(text "lb" (rect 184 91 195 106)(font "Arial" ))
+		(line (pt 216 96)(pt 200 96)(line_width 1))
+	)
+	(port
+		(pt 216 112)
+		(output)
+		(text "oe" (rect 0 0 16 15)(font "Arial" ))
+		(text "oe" (rect 179 107 195 122)(font "Arial" ))
+		(line (pt 216 112)(pt 200 112)(line_width 1))
+	)
+	(port
+		(pt 216 128)
+		(output)
+		(text "we" (rect 0 0 18 15)(font "Arial" ))
+		(text "we" (rect 177 123 195 138)(font "Arial" ))
+		(line (pt 216 128)(pt 200 128)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 144)(line_width 1))
+	)
+)
