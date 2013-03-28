@@ -269,23 +269,6 @@ begin
                   else
                      jumpR <= '0'; -- not jumping for sure
                   end if;
-               else                    -- not attempting to jump
-                  -- apply y-gravity
-                  velY <= std_logic_vector(signed(velY) + signed(GRAV_ACC));
-                  -- apply L/R daemon acceleration
-                  if(leftR = '1') then
-                     if(running = '1') then
-                        velX <= std_logic_vector(signed(velX) - signed(RUN_ACC));
-                     elsif(signed(velX) > signed(MAX_WALK_NEG_SPEED)) then
-                        velX <= std_logic_vector(signed(velX) - signed(WALK_ACC));
-                     end if;
-                  elsif(rightR = '1') then
-                     if(running = '1') then
-                        velX <= std_logic_vector(signed(velX) + signed(RUN_ACC));
-                     elsif(signed(velX) < signed(MAX_WALK_POS_SPEED)) then
-                        velX <= std_logic_vector(signed(velX) + signed(WALK_ACC));
-                     end if;
-                  end if;
                end if;
             when "00000001" => -- let SRAM read complete
                null;
@@ -335,6 +318,23 @@ begin
                      onRightWall     <= '0';
                      velY <= WALL_JMP_VEL_Y;
                      velX <= WALL_JMP_NEG_VEL_X;
+                  end if;
+               else                    -- not jumping
+                  -- apply y-gravity
+                  velY <= std_logic_vector(signed(velY) + signed(GRAV_ACC));
+                  -- apply L/R daemon acceleration
+                  if(leftR = '1') then
+                     if(running = '1') then
+                        velX <= std_logic_vector(signed(velX) - signed(RUN_ACC));
+                     elsif(signed(velX) > signed(MAX_WALK_NEG_SPEED)) then
+                        velX <= std_logic_vector(signed(velX) - signed(WALK_ACC));
+                     end if;
+                  elsif(rightR = '1') then
+                     if(running = '1') then
+                        velX <= std_logic_vector(signed(velX) + signed(RUN_ACC));
+                     elsif(signed(velX) < signed(MAX_WALK_POS_SPEED)) then
+                        velX <= std_logic_vector(signed(velX) + signed(WALK_ACC));
+                     end if;
                   end if;
                end if;
             when "00001000" => -- apply velocity bounds and friction
